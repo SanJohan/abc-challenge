@@ -14,7 +14,7 @@ export function addCard() {
 
         div.innerHTML = `
             <img
-                src="https://www.unir.net/wp-content/uploads/2025/01/Que-es-una-ONG-y-que-hace2.webp"
+                src="${letter.image}"
                 class="card-img-top alphabet-image"
                 alt="Avión"
             >
