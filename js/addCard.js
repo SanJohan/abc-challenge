@@ -1,10 +1,8 @@
+import { alphabet } from "./alphabet.js";
+
 export function addCard() {
     const cardList = document.getElementById("card");
 
-    const alphabet = [
-        "A","B","C","D","E","F","G","H","I","J","K","L",
-        "M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
-    ];
 
     cardList.innerHTML = "";
 
@@ -23,7 +21,7 @@ export function addCard() {
 
             <div class="card-body text-center">
                 <h1 class="display-4 fw-bold text-primary">
-                    ${letter}
+                    ${letter.letter}
                 </h1>
 
                 <h5 class="card-title">
