@@ -3,3 +3,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.alphabet-card {
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.alphabet-image {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 170px;
+}
+
+.alphabet-card {
+    width: 250px;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.alphabet-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
