@@ -1,35 +1,45 @@
 import { alphabet } from "./alphabet.js";
 
 export function addCard() {
-    const cardList = document.getElementById("card");
+  const cardList = document.getElementById("card");
 
+  cardList.innerHTML = "";
 
-    cardList.innerHTML = "";
+  alphabet.forEach((letter) => {
+    const div = document.createElement("div");
 
-    alphabet.forEach(letter => {
+    div.className = "card alphabet-card shadow-sm";
 
-        const div = document.createElement("div");
+    div.innerHTML = `
+      <img
+        src="${letter.image}"
+        class="card-img-top alphabet-image"
+        alt="${letter.letter}"
+      >
 
-        div.className = "card alphabet-card shadow-sm";
+      <div class="card-body text-center">
+        <h1 class="display-4 fw-bold text-primary">
+          ${letter.letter}
+        </h1>
 
-        div.innerHTML = `
-            <img
-                src="${letter.image}"
-                class="card-img-top alphabet-image"
-                alt="Avión"
-            >
+        <button
+          data-audio="${letter.audio}"
+          class="btn btn-primary play-btn">
+          Escuchar audio
+        </button>
+      </div>
+    `;
 
-            <div class="card-body text-center">
-                <h1 class="display-4 fw-bold text-primary">
-                    ${letter.letter}
-                </h1>
-
-                <h5 class="card-title">
-                    Avión
-                </h5>
-            </div>
-        `;
-
-        cardList.appendChild(div);
-    });
+    cardList.appendChild(div);
+  });
 }
+
+
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("play-btn")) {
+    const rutaAudio = e.target.dataset.audio;
+
+    const audio = new Audio(rutaAudio);
+    audio.play();
+  }
+});
