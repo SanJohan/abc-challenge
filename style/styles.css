@@ -49,3 +49,22 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
+
+
+
+.equipo-footer {
+    background: linear-gradient(135deg, #FFB347, #FF6B6B, #4ECDC4, #FFE66D);
+    background-size: 400% 400%;
+    animation: gradientMove 8s ease infinite;
+}
+
+
+/* Animación del fondo */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+
